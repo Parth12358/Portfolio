@@ -9,6 +9,7 @@ import {
   ArrowLeft,
   LucideIcon,
 } from "lucide-react";
+import Link from "next/link";
 
 interface Project {
   title: string;
@@ -170,7 +171,7 @@ const ProjectsPage = () => {
     <div className="min-h-screen py-8 md:py-12 px-4 md:px-6 bg-gray-900">
       <div className="max-w-6xl mx-auto">
         <div className="mb-6 md:mb-8">
-          <a
+          <Link
             href="/"
             className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 
     bg-gray-800/50 hover:bg-gray-700/50 border border-gray-700 hover:border-blue-500/50
@@ -179,7 +180,7 @@ const ProjectsPage = () => {
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200" />
             Back to Portfolio
-          </a>
+          </Link>
         </div>
 
         <div className="space-y-2 mb-8 md:mb-12">

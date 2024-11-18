@@ -17,6 +17,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Parth Kshirsagar",
   description: "Learn more about me",
+  icons: "app/favicon.ico",
 };
 
 export default function RootLayout({

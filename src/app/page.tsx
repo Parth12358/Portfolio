@@ -10,15 +10,11 @@ import {
   Linkedin,
   Mail,
   Terminal,
-  Download,
   ExternalLink,
-  Check,
-  Globe,
 } from "lucide-react";
 
 export default function Home() {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
-  const [isResumeClicked, setIsResumeClicked] = useState(false);
 
   const primarySkills = [
     {
@@ -78,7 +74,7 @@ export default function Home() {
         <div className="space-y-6">
           <div className="space-y-2">
             <h1 className="text-5xl font-bold text-gray-100 hover:scale-105 transition-transform cursor-default">
-              Hi, I'm
+              Hi, I&apos;m
               <span className="bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
                 {" "}
                 Parth
@@ -90,9 +86,9 @@ export default function Home() {
           </div>
 
           <p className="text-gray-300 text-lg leading-relaxed">
-            I'm a Computer Science student at Penn State University. Currently
-            maintaining a 3.59 CGPA with a minor in Entrepreneurship and
-            Innovation. I love building things that aim to impact our lives
+            I&apos;m a Computer Science student at Penn State University.
+            Currently maintaining a 3.59 CGPA with a minor in Entrepreneurship
+            and Innovation. I love building things that aim to impact our lives
           </p>
 
           <div className="flex flex-wrap gap-4">
