@@ -69,7 +69,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-[calc(100vh-80px)] flex flex-col md:flex-row items-center justify-center gap-12 py-8">
+    <div className="min-h-[calc(100vh-80px)] flex flex-col md:flex-row items-center justify-center gap-12 py-8 px-8 md:px-8">
       <div className="flex-1 max-w-xl">
         <div className="space-y-6">
           <div className="space-y-2">
