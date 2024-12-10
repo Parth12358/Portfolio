@@ -3,13 +3,14 @@ import {
   Brain,
   Cpu,
   Lightbulb,
-  Code2,
   Github,
   ExternalLink,
   ArrowLeft,
   LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
+import { DevpostIcon } from "@/components/icons/DevpostIcon";
+import Image from "next/image";
 
 interface Project {
   title: string;
@@ -22,6 +23,7 @@ interface Project {
   image: string;
   github?: string;
   demo?: string;
+  devpost?: string;
 }
 
 interface ProjectCardProps {
@@ -32,11 +34,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
   <div className="grid grid-cols-1 md:grid-cols-12 gap-4 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-blue-500/50 transition-colors overflow-hidden group">
     <div className="md:col-span-5 h-48 sm:h-64 md:h-auto relative">
       <div className="w-full h-full bg-gray-900 flex items-center justify-center relative">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 text-gray-400 flex items-center justify-center text-center"
-        />
+        <div className="relative w-full aspect-video overflow-hidden rounded-lg">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+
         <div className="absolute inset-0 bg-gray-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="absolute bottom-4 right-4 flex gap-3">
             {project.github && (
@@ -57,6 +64,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
                 className="p-2 bg-gray-800/50 rounded-full hover:bg-blue-500/20 text-gray-300 hover:text-blue-400 transition-colors"
               >
                 <ExternalLink className="w-5 h-5" />
+              </a>
+            )}
+            {project.devpost && (
+              <a
+                href={project.devpost}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-gray-800/50 rounded-full hover:bg-blue-500/20 text-gray-300 hover:text-blue-400 transition-colors"
+              >
+                <DevpostIcon className="w-5 h-5" />
               </a>
             )}
           </div>
@@ -119,9 +136,9 @@ const ProjectsPage = () => {
         "Integrated Circuit Generator for natural language command generation and 2D Circuit Simulator for rapid prototyping and testing in Pygame.",
       skills: "Unity, VR Development, Pygame, NLP, Interactive Design",
       icon: Cpu,
-      image: "/api/placeholder/800/600",
-      github: "https://github.com/yourusername/vr-circuit",
-      demo: "https://vr-circuit-demo.com",
+      image: "/gallery.jpg",
+      github: "https://github.com/Parth12358/Circuit-Simulator-Kit",
+      devpost: "https://devpost.com/software/circuit-simulator",
     },
     {
       title: "PathFinder",
@@ -134,8 +151,9 @@ const ProjectsPage = () => {
         "Built using Next.js for frontend, Langchain for AI backend, implementing two distinct data pipelines for career guidance and document processing.",
       skills: "AI Development, RAG, Next.js, Langchain, UX Design",
       icon: Brain,
-      image: "/api/placeholder/800/600",
-      github: "https://github.com/yourusername/pathfinder",
+      image: "/pathfinder.png",
+      github: "https://github.com/PabloRogers/hackpsu2024",
+      devpost: "https://devpost.com/software/pathfinder-cvhtp6",
     },
     {
       title: "The Moth Challenge",
@@ -148,22 +166,10 @@ const ProjectsPage = () => {
         "Utilized React for front-end development and JavaScript for core logic and puzzles.",
       skills: "Cryptography, Steganography, Web Security, JavaScript, React",
       icon: Lightbulb,
-      image: "/api/placeholder/800/600",
-      demo: "https://moth-challenge.com",
-    },
-    {
-      title: "Client-Server Chat Application",
-      technologies: ["C", "Linux", "GTK"],
-      achievement:
-        "Built a full-featured chat application with real-time messaging capabilities",
-      description:
-        "Developed a real-time chat application using C and GTK 4 in a Linux environment, focusing on cross-platform compatibility and performance.",
-      development:
-        "Implemented socket programming for TCP/IP connections to establish and manage communication between a central server and multiple clients.",
-      skills: "Network Programming, UI Development, System Architecture",
-      icon: Code2,
-      image: "/api/placeholder/800/600",
-      github: "https://github.com/yourusername/chat-app",
+      image: "/mothchallenge.jpg",
+      github: "https://github.com/kartikey-onlineGOD/BitCamp-2024-Cyber-",
+      devpost: "https://devpost.com/software/moth-challenege",
+      demo: "https://moth-challenge.http://phishandchips.us/com",
     },
   ];
 
